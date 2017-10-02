@@ -16,6 +16,16 @@ describe Account do
     expect(subject.transaction_details).to be_a(Array)
   end
 
+  it 'can display statement header' do
+    expect(subject.statement_show).to eq("date || credit || debit || balance")
+  end
+
+  it 'displays transaction' do
+    account = Account.new
+    account.credit(5)
+    expect(subject.statement_show).to eq(nil || 5 || nil || 5)
+  end
+
   context 'new account created and has money added' do
     before(:each) do
       subject.credit(5)

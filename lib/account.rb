@@ -20,4 +20,17 @@ class Account
     @transaction_details << [nil, nil, amount, balance]
     "Thank you for your withdrawl, your current balance is now £#{@balance}"
   end
+  
+  def statement_show
+    header
+    # "#{@transaction_details[0]} || #{@transaction_details[1]} || #{@transaction_details[2]} || #{@transaction_details[3]}"
+  end
+  
+
+  private 
+  def header
+    "date || credit || debit || balance"
+  end
+
+
 end
