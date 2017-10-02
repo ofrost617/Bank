@@ -10,6 +10,6 @@
 
 # end
 
-  # account = Account.new
-  #   account.credit(5)
-  #   expect(account.transaction_details).to eq([5, nil, 5])
+# account = Account.new
+#   account.credit(5)
+#   expect(account.transaction_details).to eq([5, nil, 5])

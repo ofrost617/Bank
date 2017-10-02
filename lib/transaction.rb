@@ -1,5 +1,5 @@
 # class Transaction
-  
+
 #   attr_reader :details, :amount_added, :amount_withdrawn
 
 #   def initialize
@@ -7,6 +7,5 @@
 #     # @amount_in
 #     # @amount_out
 #   end
-  
-  
+
 # end

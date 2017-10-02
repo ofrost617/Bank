@@ -1,6 +1,5 @@
 # account.rb
 class Account
-
   attr_reader :balance, :transaction_details
 
   INITIAL_BALANCE = 0
@@ -21,5 +20,4 @@ class Account
     @transaction_details << [nil, nil, amount, balance]
     "Thank you for your withdrawl, your current balance is now £#{@balance}"
   end
-
 end
