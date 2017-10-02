@@ -1,6 +1,4 @@
 # account.rb
-require_relative './transaction.rb'
-
 class Account
 
   attr_reader :balance
@@ -20,8 +18,5 @@ class Account
     @amount_withdrawn = amount
     @balance -= amount
   end
-
-  def transaction_summary
-    transation_details
 
 end

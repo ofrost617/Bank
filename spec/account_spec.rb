@@ -26,18 +26,4 @@ describe Account do
       expect(subject.balance).to eq(3)
     end
   end
-
-  # it 'summarises the transaction' do
-  #   account = Account.new
-  #   account.credit(5)
-  #   account.debit(2)
-  #   expect(account.summary).to eq("Your new balance is £3")
-
-  it 'adds the details of the transaction to an array' do
-    account = Account.new
-    account.credit(5)
-    expect(account.transaction_details).to eq([5, nil, 5])
-  end
-  
-
 end

@@ -1,8 +1,11 @@
 class Transaction
   
+  attr_reader :details
+
   def initialize
-    @amount_in
-    @amount_out
+    @details = [nil, nil, nil, nil]
+    # @amount_in
+    # @amount_out
   end
   
 end
