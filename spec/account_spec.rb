@@ -18,4 +18,11 @@ describe Account do
     expect(account.balance).to eq(5)
   end
 
+  it 'can have money debited' do
+    account = Account.new
+    account.credit(5)
+    account.debit(2)
+    expect(account.balance).to eq(3)
+  end
+
 end
