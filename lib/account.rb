@@ -12,10 +12,14 @@ class Account
 
   def credit(amount)
     @balance += amount
+    @transaction_details << [nil, amount, nil, @balance]
+    "Thank you for your deposit, your current balance is now £#{@balance}"
   end
 
   def debit(amount)
     @balance -= amount
+    @transaction_details << [nil, nil, amount, balance]
+    "Thank you for your withdrawl, your current balance is now £#{@balance}"
   end
 
 end

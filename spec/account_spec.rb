@@ -16,6 +16,10 @@ describe Account do
     expect(subject.transaction_details).to be_a(Array)
   end
 
+  it 'message shows new balance when money added' do
+      expect(subject.credit(5)).to eq("Thank you for your deposit, your current balance is now £5")
+    end
+
   context 'new account created and has money added' do
     before(:each) do
       subject.credit(5)
@@ -30,7 +34,20 @@ describe Account do
       expect(subject.balance).to eq(3)
     end
 
+    it 'adds details of a debit transaction to the array' do
+      subject.debit(5)
+      expect(subject.transaction_details[1]).to eq([nil, nil, 5, 0])
+    end
+
+    it 'message shows new balance when money withdrawn' do
+      expect(subject.debit(3)).to eq("Thank you for your withdrawl, your current balance is now £2")
+    end
+
   end
 
+  it 'adds details of a credit transaction to the transactions array' do
+    subject.credit(5)
+    expect(subject.transaction_details[0]).to eq([nil, 5, nil, 5])
+  end
 
 end
