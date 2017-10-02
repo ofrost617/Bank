@@ -12,16 +12,18 @@ describe Account do
     expect(account.balance).to eq(0)
   end
 
-  it 'can have money added' do
-    account = Account.new
-    account.credit(5)
-    expect(account.balance).to eq(5)
-  end
+  context 'new account created and has money added' do
+    before(:each) do
+      subject.credit(5)
+    end
 
-  it 'can have money debited' do
-    account = Account.new
-    account.credit(5)
-    account.debit(2)
-    expect(account.balance).to eq(3)
+    it 'adding money changes balance' do
+      expect(subject.balance).to eq(5)
+    end
+
+    it 'can have money debited' do
+      subject.debit(2)
+      expect(subject.balance).to eq(3)
+    end
   end
 end
