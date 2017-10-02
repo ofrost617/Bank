@@ -24,5 +24,4 @@ describe Account do
     account.debit(2)
     expect(account.balance).to eq(3)
   end
-
 end
