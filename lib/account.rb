@@ -23,12 +23,23 @@ class Account
   end
 
   def statement
-    "#{@transaction_details[0][0]} || #{@transaction_details[0][1]} || #{@transaction_details[0][2]} || #{@transaction_details[0][3]}"
+    puts "date || credit || debit || balance"
+    logs = ""
+    @transaction_details.each do |log|
+      logs += "#{log[0]} || #{log[1]} || #{log[2]} || #{log[3]}\n"
+    end
+    puts logs
   end
 
-  def header
-    "date || credit || debit || balance"
-  end
+  # def header
+  #   "date || credit || debit || balance"
+  # end
+
+  # def show_statement
+  #   statement &&
+  #   header
+  # end
+  
 
   
 end
