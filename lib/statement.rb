@@ -12,4 +12,5 @@ class Statement
     end
     puts logs
   end
+  
 end
