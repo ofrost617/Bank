@@ -16,7 +16,7 @@ class Account
   end
 
   def debit(amount)
-    raise 'Insufficient funds to withdraw money' if @balance === 0
+    raise 'Insufficient funds to withdraw money' if @balance == 0
     @balance -= amount
     @transaction_details << [Time.now.strftime('%m/%d/%Y'), nil, amount, balance]
     "Thank you for your withdrawl, your current balance is now £#{@balance}"
