@@ -8,29 +8,29 @@ class Account
     @balance = balance
     @transaction_details = []
   end
+  
 
   def credit(amount)
     @balance += amount
-    @transaction_details << [nil, amount, nil, @balance]
+    @transaction_details << [Time.now.strftime("%m/%d/%Y"), amount, nil, @balance]
     "Thank you for your deposit, your current balance is now £#{@balance}"
   end
 
   def debit(amount)
     @balance -= amount
-    @transaction_details << [nil, nil, amount, balance]
+    @transaction_details << [Time.now.strftime("%m/%d/%Y"), nil, amount, balance]
     "Thank you for your withdrawl, your current balance is now £#{@balance}"
   end
-  
-  def statement_show
-    header
-    # "#{@transaction_details[0]} || #{@transaction_details[1]} || #{@transaction_details[2]} || #{@transaction_details[3]}"
+
+  def statement
+    "#{@transaction_details[0][0]} || #{@transaction_details[0][1]} || #{@transaction_details[0][2]} || #{@transaction_details[0][3]}"
   end
   
-
-  private 
-  def header
-    "date || credit || debit || balance"
-  end
-
-
+  
 end
+  
+
+  # private 
+  # def header
+  #   "date || credit || debit || balance"
+  # end

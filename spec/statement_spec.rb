@@ -4,9 +4,12 @@
 # describe Statement do
 #   subject { described_class.new }
 
+
 #   it 'can display statement header' do
 #     expect(subject.header).to eq("date || credit || debit || balance")
 #   end
+
+#   # let(:account) { double :account }
 
 #   it 'displays transaction' do
 #     account = Account.new
