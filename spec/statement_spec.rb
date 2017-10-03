@@ -15,7 +15,4 @@ describe Statement do
     subject.create_statement(account)
     expect { subject.print_statement }.to output("#{header}#{first_log}").to_stdout
   end
-
-  it 'can access transaction_details' do
-  end
 end
