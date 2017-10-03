@@ -2,7 +2,6 @@ require_relative './account.rb'
 
 # statement.rb
 class Statement
-  def initialize; end
 
   def statement(account)
     puts 'date || credit || debit || balance'
