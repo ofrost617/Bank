@@ -1,5 +1,4 @@
 require_relative './bank.rb'
-require_relative './transacton_log.rb'
 
 # account.rb
 class Account
@@ -18,7 +17,7 @@ class Account
   end
 
   def debit(amount)
-    raise 'Insufficient funds to withdraw money' if @balance == 0
+    raise 'Insufficient funds to withdraw money' if @balance.zero?
     @balance -= amount
     @transaction_details << [Time.now.strftime('%m/%d/%Y'), nil, amount, balance]
   end
