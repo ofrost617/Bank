@@ -22,5 +22,4 @@ class Account
     @balance -= amount
     @transaction_details << [@current_time, nil, format('%.02f', amount), format('%.02f', @balance)]
   end
-  
 end
