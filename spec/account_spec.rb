@@ -28,10 +28,14 @@ describe Account do
       expect(subject.transaction_details[1]).to eq([time, nil, 5, 0])
     end
 
+    it 'shows statement header' do
+      expect(subject.header).to eq("date || credit || debit || balance")
+    end
+
     it 'shows statement' do
       time = Time.now.strftime("%m/%d/%Y")
-      expect(subject.statement).to eq("#{time} || 5 || #{nil} || 5")
       p subject.statement
+      expect(subject.statement).to include("#{time} || 5 || #{nil} || 5")
     end
     
 

@@ -25,12 +25,10 @@ class Account
   def statement
     "#{@transaction_details[0][0]} || #{@transaction_details[0][1]} || #{@transaction_details[0][2]} || #{@transaction_details[0][3]}"
   end
-  
+
+  def header
+    "date || credit || debit || balance"
+  end
+
   
 end
-  
-
-  # private 
-  # def header
-  #   "date || credit || debit || balance"
-  # end
