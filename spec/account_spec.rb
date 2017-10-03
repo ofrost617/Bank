@@ -16,6 +16,11 @@ describe Account do
     expect(subject.transaction_details).to be_a(Array)
   end
 
+  it 'cannot debit money when account is 0' do
+    account = Account.new
+    expect{ account.debit(0) }.to raise_error 'Insufficient funds to withdraw money'
+  end  
+
   context 'new account created and has money added' do
     before(:each) do
       subject.credit(5)
