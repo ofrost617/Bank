@@ -13,12 +13,12 @@ class Account
 
   def credit(amount)
     @balance += amount
-    @transaction_details << [Time.now.strftime('%m/%d/%Y'), amount, nil, @balance]
+    @transaction_details << [Time.now.strftime('%m/%d/%Y'), format('%.02f', amount), nil, format('%.02f', @balance)]
   end
 
   def debit(amount)
     raise 'Insufficient funds to withdraw money' if @balance.zero?
     @balance -= amount
-    @transaction_details << [Time.now.strftime('%m/%d/%Y'), nil, amount, balance]
+    @transaction_details << [Time.now.strftime('%m/%d/%Y'), nil, format('%.02f', amount), format('%.02f', @balance)]
   end
 end

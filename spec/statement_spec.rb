@@ -9,7 +9,7 @@ describe Statement do
     account.credit(5)
     time = Time.now.strftime('%m/%d/%Y')
     header = "date || credit || debit || balance\n"
-    first_log = "#{time} || 5 ||  || 5\n"
+    first_log = "#{time} || 5.00 ||  || 5.00\n"
     expect { subject.statement(account) }.to output("#{header}#{first_log}").to_stdout
   end
 

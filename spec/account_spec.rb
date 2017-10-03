@@ -38,12 +38,12 @@ describe Account do
     it 'adds details of a debit transaction to the array' do
       time = Time.now.strftime('%m/%d/%Y')
       subject.debit(5)
-      expect(subject.transaction_details[1]).to eq([time, nil, 5, 0])
+      expect(subject.transaction_details[1]).to eq([time, nil, '5.00', '0.00'])
     end
 
     it 'adds details of a credit transaction to the transactions array' do
       time = Time.now.strftime('%m/%d/%Y')
-      expect(subject.transaction_details[0]).to eq([time, 5, nil, 5])
+      expect(subject.transaction_details[0]).to eq([time, '5.00', nil, '5.00'])
     end
   end
 end
