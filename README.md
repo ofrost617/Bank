@@ -21,6 +21,7 @@
 # Configuration #
 
 `bundle install`
+
 `sudo gem install flog `
 
 File list:
@@ -28,15 +29,20 @@ File list:
 lib
   - account.rb
   - statement.rb
+
 spec
   - account_spec.rb
   - credit_spec.rb
   - debit_spec.rb
   - spec_helper.rb
   - statement_spec.rb
+
 .rubocop.yml
+
 Gemfile
+
 Rakefile
+
 README.md
 
 
