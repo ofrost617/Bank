@@ -16,37 +16,20 @@ describe Account do
     expect(subject.transaction_details).to be_a(Array)
   end
 
-
   context 'new account created and has money added' do
     before(:each) do
       subject.credit(5)
     end
-  
+
     it 'adds details of a debit transaction to the array' do
-      time = Time.now.strftime("%m/%d/%Y")
+      time = Time.now.strftime('%m/%d/%Y')
       subject.debit(5)
       expect(subject.transaction_details[1]).to eq([time, nil, 5, 0])
     end
 
-    # it 'shows statement header' do
-    #   expect(subject.header).to eq("date || credit || debit || balance")
-    # end
-
-    it 'shows statement' do
-      time = Time.now.strftime("%m/%d/%Y")
-      header = "date || credit || debit || balance\n"
-      first_log = "#{time} || 5 || #{nil} || 5\n"
-      p subject.statement
-      expect{subject.statement}.to output("#{header}#{first_log}").to_stdout
+    it 'adds details of a credit transaction to the transactions array' do
+      time = Time.now.strftime('%m/%d/%Y')
+      expect(subject.transaction_details[0]).to eq([time, 5, nil, 5])
     end
-    
-
   end
-
-  it 'adds details of a credit transaction to the transactions array' do
-    time = Time.now.strftime("%m/%d/%Y")
-    subject.credit(5)
-    expect(subject.transaction_details[0]).to eq([time, 5, nil, 5])
-  end
-
 end

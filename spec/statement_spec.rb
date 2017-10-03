@@ -1,24 +1,18 @@
-# require_relative '../lib/statement.rb'
-# require_relative '../lib/account.rb'
+require_relative '../lib/statement.rb'
+require_relative '../lib/account.rb'
 
-# describe Statement do
-#   subject { described_class.new }
+describe Statement do
+  subject { described_class.new }
 
+  it 'shows statement' do
+    account = Account.new
+    account.credit(5)
+    time = Time.now.strftime('%m/%d/%Y')
+    header = "date || credit || debit || balance\n"
+    first_log = "#{time} || 5 ||  || 5\n"
+    expect { subject.statement(account) }.to output("#{header}#{first_log}").to_stdout
+  end
 
-#   it 'can display statement header' do
-#     expect(subject.header).to eq("date || credit || debit || balance")
-#   end
-
-#   # let(:account) { double :account }
-
-#   it 'displays transaction' do
-#     account = Account.new
-#     account.credit(5)
-#     expect(subject.show).to eq(nil || 5 || nil || 5)
-#   end
-  
-  
-
-
-# end
-
+  it 'can access transaction_details' do
+  end
+end
