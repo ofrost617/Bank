@@ -2,7 +2,6 @@ require_relative './account.rb'
 
 # statement.rb
 class Statement
-
   def statement(account)
     puts 'date || credit || debit || balance'
     logs = ''
@@ -11,5 +10,4 @@ class Statement
     end
     puts logs
   end
-  
 end

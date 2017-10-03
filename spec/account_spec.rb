@@ -26,6 +26,15 @@ describe Account do
       subject.credit(5)
     end
 
+    it 'can have money credited' do
+      expect(subject.balance).to eq(5)
+    end
+
+    it 'can have money debited' do
+      subject.debit(2)
+      expect(subject.balance).to eq(3)
+    end
+
     it 'adds details of a debit transaction to the array' do
       time = Time.now.strftime('%m/%d/%Y')
       subject.debit(5)
