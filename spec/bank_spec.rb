@@ -8,7 +8,7 @@ describe Bank do
   it 'can request withdrawl' do
     account = Account.new
     account.credit(5)
-    expect(bank.withdraw(2)).to eq("Thank you for your withdrawl, your current balance is now £3")
+    expect(subject.withdraw(2)).to eq("Thank you for your withdrawl, your current balance is now £3")
   end
   
 
