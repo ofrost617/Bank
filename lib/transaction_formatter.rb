@@ -1,12 +1,17 @@
-class Transaction
+class TransactionFormatter
   
-attr_reader :date
+  attr_reader :date, :transaction_log
+
+  def initialize
+    @transaction_log = []
+  end
+  
 
   def add(type, amount, balance)
     if type == :credit
-      format_credit(type, amount, balance)
+      @transaction_log << format_credit(type, amount, balance)
     else
-      format_debit(type, amount, balance)
+      @transaction_log << format_debit(type, amount, balance)
     end
     
   end

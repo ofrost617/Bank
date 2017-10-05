@@ -4,6 +4,8 @@ require_relative './account.rb'
 class Statement
   attr_reader :header, :logs
 
+  HEADER = 'date || credit || debit || balance'
+
   def initialize
     @header = 'date || credit || debit || balance'
   end
