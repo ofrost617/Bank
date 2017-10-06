@@ -1,23 +1,34 @@
 require_relative './account.rb'
+require_relative './transaction_formatter.rb'
 
-# statement.rb
 class Statement
-  attr_reader :header, :logs
 
-  HEADER = 'date || credit || debit || balance'
+  attr_reader :transaction_log
 
-  def initialize
-    @header = 'date || credit || debit || balance'
+  HEADER = "date || credit || debit || balance\n"
+
+  def initialize(transaction = TransactionFormatter.new)
+    @transaction = transaction
+    @transaction_log = []
   end
 
-  def create_statement(account)
-    @logs = ''
-    account.transaction_details.each do |log|
-      @logs += "#{log[0]} || #{log[1]} || #{log[2]} || #{log[3]}\n"
-    end
-  end
-
+  def add_transaction(type, amount, balance)
+    new_transaction = @transaction.add(type, amount, balance)
+    @transaction_log << new_transaction
+  end  
+  
   def print_statement
-    puts "#{@header}\n#{@logs}"
+    puts create_statement(transaction_log)
   end
+
+  private
+
+  def create_statement(transaction_log)
+    HEADER + transaction_list(transaction_log)
+  end
+
+  def transaction_list(_transaction_log)
+    @transaction_log.join("\n")
+  end
+  
 end
