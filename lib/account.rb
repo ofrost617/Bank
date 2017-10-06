@@ -1,6 +1,8 @@
 require_relative './bank.rb'
+require_relative './statement.rb'
+require_relative './transaction_formatter.rb'
+require_relative './transaction_log.rb'
 
-# account.rb
 class Account
   attr_reader :balance, :transaction_details
 
@@ -8,8 +10,6 @@ class Account
 
   def initialize(balance = INITIAL_BALANCE)
     @balance = balance
-    @transaction_details = []
-    @current_time = Time.now.strftime('%m/%d/%Y')
   end
 
   def credit(amount)

@@ -12,10 +12,6 @@ describe Account do
     expect(account.balance).to eq(0)
   end
 
-  it 'has details of each transaction in an array' do
-    expect(subject.transaction_details).to be_a(Array)
-  end
-
   context 'new account created and has money added' do
     before(:each) do
       subject.credit(5)

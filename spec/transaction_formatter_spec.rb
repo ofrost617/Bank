@@ -1,5 +1,3 @@
-require_relative '../lib/account.rb'
-require_relative '../lib/statement.rb'
 require_relative '../lib/transaction_formatter.rb'
 
 describe TransactionFormatter do
